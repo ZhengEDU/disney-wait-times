@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disneyland Wait Times</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Disneyland Wait Time Checker 🎢</h1>
+        <p class="subtitle">Powered by Queue-Times.com</p>
+
+        <form method="POST">
+            <input
+                type="text"
+                name="ride"
+                placeholder="Enter ride name"
+                required
+            >
+            <button type="submit">Check Wait Time</button>
+        </form>
+
+        {% if wait_time %}
+            <div class="result">
+                The current wait time for
+                <strong>{{ ride.title() }}</strong>
+                is <strong>{{ wait_time }} minutes</strong>.
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

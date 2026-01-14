@@ -1,0 +1,99 @@
+/* Page background + centering */
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 0, 0, 0.25) 0%,
+            rgba(0, 0, 0, 0.7) 75%
+        ),
+        url("/static/images/disney.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main card */
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 360px;
+    text-align: center;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    /* Default calm state */
+    transform: scale(0.95);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Focused state */
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Subtitle text */
+.subtitle {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Input field */
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff6f00;
+    box-shadow: 0 0 8px rgba(255, 111, 0, 0.4);
+}
+
+/* Button */
+button {
+    margin-top: 15px;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+
+    background-color: #ff6f00;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+}
+
+/* Result text */
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Error message */
+.error {
+    margin-top: 15px;
+    color: red;
+}
